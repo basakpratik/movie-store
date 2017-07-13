@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('movieApp.footer.directive',[]).directive('footer', function(){
+angular.module('movieApp.footer.directive',[]).directive('movieFooter', function(){
     return {
         restrict: EA,
         templateUrl: 'application/shared/footer/footer.html',

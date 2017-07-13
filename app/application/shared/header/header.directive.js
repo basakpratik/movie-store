@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('movieApp.header.directive',[]).directive('navbar', function(){
+angular.module('movieApp.header.directive',[]).directive('movieNavbar', function(){
     return {
         restrict: EA,
         templateUrl: 'application/shared/header/header.html',
