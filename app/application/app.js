@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('movieApp', [
-    'ui', 'ui.router', 'ui.bootstrap', 'movieApp.header', 'movieApp.footer'
+    'ui.router', 'movieApp.header', 'movieApp.footer'
 ]);
 
 angular.module('movieApp').config([
@@ -10,8 +10,8 @@ angular.module('movieApp').config([
         // ...
     }
 ])
-.run(['$state', '$rootScope', '$location',
-    function ($state, $rootScope, $location) {
+.run(['$state', '$rootScope',
+    function ($state, $rootScope) {
         // ...
     }
 ])
