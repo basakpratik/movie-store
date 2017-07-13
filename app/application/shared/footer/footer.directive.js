@@ -2,7 +2,7 @@
 
 angular.module('movieApp.footer.directive',[]).directive('movieFooter', function(){
     return {
-        restrict: 'EA',
+        restrict: 'E',
         templateUrl: 'application/shared/footer/footer.html',
         link: function (scope, elem, attrs, state) {
             // ..
