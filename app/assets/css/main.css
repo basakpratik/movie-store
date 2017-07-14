@@ -1,3 +1,4 @@
+nav ul{ list-style-type: none;}
 .mdl-chip{ display: inline-block; vertical-align: middle; margin-right: 5px; }
 .vmargin{ margin: 30px 0; }
 .vmargin .mdl-textfield{ width: 50px; }
