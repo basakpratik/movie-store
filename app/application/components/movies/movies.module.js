@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('movieApp.movies', ['movieApp.movies.controller', 'movieApp.movies.service']);
+angular.module('movieApp.movies', ['movieApp.movies.controller', 'movieApp.movies.service', 'movieApp.movies.filter']);

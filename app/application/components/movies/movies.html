@@ -1,21 +1,39 @@
 <div class="page-content">
     <div class="android-card-container mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+        <div ng-repeat="movie in movielist | startFrom:currentPage*pageSize | limitTo:pageSize" class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
                 <img src="assets/img/more-from-1.png">
             </div>
             <div class="mdl-card__title">
-                <h4 class="mdl-card__title-text">Get going on Android</h4>
+                <h4 class="mdl-card__title-text">{{movie.movie_title}}</h4>
             </div>
             <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+                <span ng-repeat="tagchip in (movie.genres).split('|')"  class="mdl-chip">
+                    <span class="mdl-chip__text">{{tagchip}}</span>
+                </span>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <div class="mdl-typography--font-light mdl-typography--subhead">Director: {{movie.director_name}}</div>
             </div>
             <div class="mdl-card__actions">
-                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                Make the switch
+                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="{{movie_imdb_link}}">
+                Go to Movie
                 <i class="material-icons">chevron_right</i>
                 </a>
             </div>
         </div>
+    </div>
+    <div class="text-center vmargin">
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Previous
+        </button>
+        <!-- <span class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input text-center" type="text" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="currentPage">
+            <span class="mdl-textfield__error">Input is not a number!</span>
+        </span> -->
+        {{currentPage+1}} of {{numberOfPages()}}
+        <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Next
+        </button>
     </div>
 </div>
