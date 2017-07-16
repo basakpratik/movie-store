@@ -6,11 +6,13 @@ angular.module('movieApp.movies.controller', []).controller('MoviesController',
 
     $scope.movielist = [];
 
-    (function(){
-        MoviesService.getData().then(function(dataparam){
+    /* (function(){
+        MoviesService.msGetData().then(function(dataparam){
             //$log.log('dataparam->'+JSON.stringify(dataparam));
             $scope.movielist = dataparam;
         });
-    })();
+    })(); */
+
+    $scope.movielist = MoviesService.msGetFilteredMovies();
 
 }]);

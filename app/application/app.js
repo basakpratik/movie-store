@@ -1,12 +1,17 @@
 'use strict'
 
 angular.module('movieApp', [
-    'ui.router', 'movieApp.header', 'movieApp.footer', 'movieApp.movies'
+    'ui.router', 'movieApp.home', 'movieApp.header', 'movieApp.footer', 'movieApp.movies'
 ]);
 
 angular.module('movieApp').config([
     '$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider){
+        $stateProvider.state('home', {
+            url: '/home',
+            controller: 'HomeController',
+            templateUrl: 'application/components/home/home.html'
+        });
         $stateProvider.state('movies', {
             url: '/movies',
             controller: 'MoviesController',
@@ -18,6 +23,6 @@ angular.module('movieApp').config([
 .run(['$state', '$rootScope',
     function ($state, $rootScope) {
         // ...
-        $state.go('movies');
+        $state.go('home');
     }
 ])

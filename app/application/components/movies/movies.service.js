@@ -4,8 +4,9 @@ angular.module('movieApp.movies.service', []).service('MoviesService',
 ['$http', '$log', '$q', function($http, $log, $q){
 
     var data, accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
+    var msFilteredMovies = [];
         
-    this.getData = function(){
+    this.msGetData = function(){
         var def = $q.defer();
         var config = {
             'Content-Type': 'application/json',
@@ -28,6 +29,15 @@ angular.module('movieApp.movies.service', []).service('MoviesService',
             def.reject('Error fetching data ..');
         });
         return def.promise;
+    }
+
+    this.msSetFilteredMovies = function(filteredMovies){
+        msFilteredMovies = filteredMovies;
+    }
+
+    this.msGetFilteredMovies = function(){
+        //$log.log('msFilteredMovies->'+msFilteredMovies);
+        return msFilteredMovies;
     }
 
 }]);

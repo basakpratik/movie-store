@@ -20,19 +20,16 @@
 							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Home</a>
 						</li>
 						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Wear</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About</a>
 						</li>
 						<li>
 							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">TV</a>
 						</li>
 						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Auto</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Most Popular</a>
 						</li>
 						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">One</a>
-						</li>
-						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Play</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">News</a>
 						</li>
 					</ul>
 				</nav>
@@ -40,7 +37,7 @@
 					<i class="material-icons">more_vert</i>
 				</button>
 				<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-					<li ng-repeat="genre in genres" class="mdl-menu__item">{{genre}}</li>
+					<li ng-repeat="genre in genres" class="mdl-menu__item" ng-click="filterMovies(genre)">{{genre}}</li>
 				</ul>
 			</div>
 		</div>
