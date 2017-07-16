@@ -9,10 +9,10 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
         },
         controller: function($scope, $log, $state, MoviesService){
             $scope.genres = ['Action', 'Adventure', 'Fantasy', 'Sci-Fi', 'Romance', 'Animation', 'Comedy', 'Drama', 'History', 'Thriller'];
-            var filteredMovies = [];
 
             $scope.filterMovies = function(genre){
                 $log.log('genre->'+genre);
+                var filteredMovies = [];
                 MoviesService.msGetData().then(function(dataparam){
                     //$log.log('dataparam->'+JSON.stringify(dataparam));
                     $scope.movielist = dataparam;
@@ -20,7 +20,8 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
                         if($scope.movielist[idx].genres.indexOf(genre) > -1){
                             filteredMovies.push($scope.movielist[idx]);
                             MoviesService.msSetFilteredMovies(filteredMovies);
-                            $state.go('movies');
+                            //$state.go('movies');
+                            $state.go('movies', null, {'reload':true});
                         }
                     }
                 });
