@@ -7,11 +7,12 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
         link: function (scope, elem, attrs, state) {
             // ..
         },
-        controller: function($scope, $log, $state, MoviesService){
+        controller: function($scope, $log, $state, $rootScope, MoviesService){
             $scope.genres = ['Action', 'Adventure', 'Fantasy', 'Sci-Fi', 'Romance', 'Animation', 'Comedy', 'Drama', 'History', 'Thriller'];
 
             $scope.filterMovies = function(genre){
                 $log.log('genre->'+genre);
+                $rootScope.overlay = true;
                 var filteredMovies = [];
                 MoviesService.msGetData().then(function(dataparam){
                     //$log.log('dataparam->'+JSON.stringify(dataparam));
@@ -21,6 +22,7 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
                             filteredMovies.push($scope.movielist[idx]);
                             MoviesService.msSetFilteredMovies(filteredMovies);
                             //$state.go('movies');
+                            $log.log('clicked');
                             $state.go('movies', null, {'reload':true});
                         }
                     }

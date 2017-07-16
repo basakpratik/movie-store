@@ -23,6 +23,7 @@ angular.module('movieApp').config([
 .run(['$state', '$rootScope',
     function ($state, $rootScope) {
         // ...
+        $rootScope.overlay = false;
         $state.go('home');
     }
 ])

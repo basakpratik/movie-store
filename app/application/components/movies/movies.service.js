@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('movieApp.movies.service', []).service('MoviesService',
-['$http', '$log', '$q', function($http, $log, $q){
+['$http', '$log', '$q', '$rootScope', function($http, $log, $q, $rootScope){
 
     var data, accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
     var msFilteredMovies = [];
@@ -37,6 +37,7 @@ angular.module('movieApp.movies.service', []).service('MoviesService',
 
     this.msGetFilteredMovies = function(){
         //$log.log('msFilteredMovies->'+msFilteredMovies);
+        $rootScope.overlay = false;
         return msFilteredMovies;
     }
 

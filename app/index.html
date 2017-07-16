@@ -14,6 +14,9 @@
 </head>
 <body>
     <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+        <div class="loader-overlay" ng-show="overlay">
+            <div class="mdl-spinner mdl-js-spinner is-active"></div>
+        </div>
         <movie-navbar></movie-navbar>
         <main class="mdl-layout__content" ui-view></main>
         <movie-footer></movie-footer>
