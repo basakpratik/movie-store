@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('movieApp.movies.service', []).service('MoviesService',
+angular.module('movieApp.search.service', []).service('SearchService',
 ['$http', '$log', '$q', '$rootScope', function($http, $log, $q, $rootScope){
 
     var data, accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
-    var msFilteredMovies = [], msSearchResults = [];
+    var msFilteredMovies = [];
         
     this.msGetData = function(){
         var def = $q.defer();
@@ -39,17 +39,6 @@ angular.module('movieApp.movies.service', []).service('MoviesService',
         //$log.log('msFilteredMovies->'+msFilteredMovies);
         $rootScope.overlay = false;
         return msFilteredMovies;
-    }
-
-    this.msSetSearchedMovies = function(searchedMovies){
-        msSearchResults = searchedMovies;
-    }
-
-    this.msGetSearchedMovies = function(){
-        //$log.log('msFilteredMovies->'+msFilteredMovies);
-        $rootScope.overlay = false;
-        $log.log('msSearchResults: '+JSON.stringify(msSearchResults));
-        return msSearchResults;
     }
 
 }]);

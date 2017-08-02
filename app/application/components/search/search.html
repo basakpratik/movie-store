@@ -1,0 +1,29 @@
+<div class="page-content">
+    <h1 class="mdl-typography--display-1-color-contrast mdl-typography--text-center">{{searchLength}} Results Found ..</h1>
+    <div class="android-card-container mdl-grid">
+        <div ng-repeat="search in searchlist" class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__title mdl-card--expand">
+                <h4 class="mdl-card__title-text">{{search.movie_title}}</h4>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <div class="mdl-typography--font-regular mdl-typography--subhead"><strong>Language:</strong> {{search.language}}</div>
+                <div class="mdl-typography--font-regular mdl-typography--subhead"><strong>Country:</strong> {{search.country}}</div>
+                <div class="mdl-typography--font-regular mdl-typography--subhead"><strong>Release Year:</strong> {{search.title_year}}</div>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <span ng-repeat="tagchip in (search.genres).split('|')"  class="mdl-chip">
+                    <span class="mdl-chip__text">{{tagchip}}</span>
+                </span>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <div class="mdl-typography--font-regular mdl-typography--subhead"><strong>Director:</strong> {{search.director_name}}</div>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="android-link mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{search.movie_imdb_link}}">
+                Go to Movie
+                <i class="material-icons">chevron_right</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

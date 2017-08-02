@@ -2,42 +2,45 @@
 	<div class="mdl-layout__header-row">
 		<span class="android-title mdl-layout-title">
 			<img class="android-logo-image" src="">
-			</span>
-			<!-- Add spacer, to align navigation to the right in desktop -->
-			<div class="android-header-spacer mdl-layout-spacer"></div>
-			<div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-				<label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
-					<i class="material-icons">search</i>
-				</label>
+		</span>
+		<!-- Add spacer, to align navigation to the right in desktop -->
+		<div class="android-header-spacer mdl-layout-spacer"></div>
+		<div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+			<label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+				<i class="material-icons">search</i>
+			</label>
+			<form ng-submit="search(searchText)">
 				<div class="mdl-textfield__expandable-holder">
-					<input class="mdl-textfield__input" type="text" id="search-field">
-					</div>
+					<input class="mdl-textfield__input" type="text" id="search-field" ng-model="searchText" autocomplete="off">
 				</div>
-				<!-- Navigation -->
-				<nav class="android-navigation-container">
-					<ul class="android-navigation mdl-navigation">
-						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Home</a>
-						</li>
-						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About</a>
-						</li>
-						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">TV</a>
-						</li>
-						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Most Popular</a>
-						</li>
-						<li>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">News</a>
-						</li>
-					</ul>
-				</nav>
-				<button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-					<i class="material-icons">more_vert</i>
-				</button>
-				<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-					<li ng-repeat="genre in genres" class="mdl-menu__item" ng-click="filterMovies(genre)">{{genre}}</li>
-				</ul>
-			</div>
+				<button type="submit" class="hidden-submit"></button>
+			</form>
 		</div>
+			<!-- Navigation -->
+		<nav class="android-navigation-container">
+			<ul class="android-navigation mdl-navigation">
+				<li>
+					<a class="mdl-navigation__link mdl-typography--text-uppercase" ui-sref="home">Home</a>
+				</li>
+				<li>
+					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About</a>
+				</li>
+				<li>
+					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">TV</a>
+				</li>
+				<li>
+					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Most Popular</a>
+				</li>
+				<li>
+					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">News</a>
+				</li>
+			</ul>
+		</nav>
+		<button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+			<i class="material-icons">more_vert</i>
+		</button>
+		<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+			<li ng-repeat="genre in genres" class="mdl-menu__item" ng-click="filterMovies(genre)">{{genre}}</li>
+		</ul>
+	</div>
+</div>

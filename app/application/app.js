@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('movieApp', [
-    'ui.router', 'movieApp.home', 'movieApp.header', 'movieApp.footer', 'movieApp.movies'
+    'ui.router', 'movieApp.home', 'movieApp.header', 'movieApp.footer', 'movieApp.movies', 'movieApp.search'
 ]);
 
 angular.module('movieApp').config([
@@ -16,6 +16,11 @@ angular.module('movieApp').config([
             url: '/movies',
             controller: 'MoviesController',
             templateUrl: 'application/components/movies/movies.html'
+        });
+        $stateProvider.state('search', {
+            url: '/search',
+            controller: 'SearchController',
+            templateUrl: 'application/components/search/search.html'
         });
         $urlRouterProvider.otherwise('/');
     }

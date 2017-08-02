@@ -15,7 +15,7 @@
 <body>
     <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
         <div class="loader-overlay" ng-show="overlay">
-            <div class="mdl-spinner mdl-js-spinner is-active"></div>
+            <div class="spinner-container"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
         </div>
         <movie-navbar></movie-navbar>
         <main class="mdl-layout__content" ui-view></main>
@@ -43,5 +43,8 @@
     <script src="application/components/movies/movies.controller.js"></script>
     <script src="application/components/movies/movies.service.js"></script>
     <script src="application/components/movies/movies.filter.js"></script>
+
+    <script src="application/components/search/search.module.js"></script>
+    <script src="application/components/search/search.controller.js"></script>
 </body>
 </html>
