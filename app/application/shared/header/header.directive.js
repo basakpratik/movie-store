@@ -21,7 +21,6 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
                         if(movielist[idx].genres.indexOf(genre) > -1){
                             filteredMovies.push(movielist[idx]);
                             MoviesService.msSetFilteredMovies(filteredMovies);
-                            //$state.go('movies');
                             //$log.log('clicked');
                             $state.go('movies', null, {'reload':true});
                         }

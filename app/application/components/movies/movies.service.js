@@ -46,9 +46,8 @@ angular.module('movieApp.movies.service', []).service('MoviesService',
     }
 
     this.msGetSearchedMovies = function(){
-        //$log.log('msFilteredMovies->'+msFilteredMovies);
         $rootScope.overlay = false;
-        $log.log('msSearchResults: '+JSON.stringify(msSearchResults));
+        //$log.log('msSearchResults: '+JSON.stringify(msSearchResults));
         return msSearchResults;
     }
 
