@@ -15,6 +15,15 @@ module.exports = function (config) {
 
 		// list of files / patterns to load in the browser
 		files: [
+			'assets/lib/bower_components/jquery/dist/jquery.min.js',
+			'assets/lib/bower_components/angular/angular.min.js',
+			'node_modules/angular-mocks.js',
+			'assets/lib/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+			'assets/lib/bower_components/bootstrap/dist/js/bootstrap.min.js',
+			'assets/lib/bower_components/material-design-lite/material.min.js',
+
+			'application/app.js',
+			'application/components/movies/movies.controller.js',
 			'application/**/**/*.js'
 		],
 
@@ -25,7 +34,9 @@ module.exports = function (config) {
 
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-		preprocessors: {},
+		preprocessors: {
+			'application/**/**/*.js' : ['coverage']
+		},
 
 
 		// test results reporter to use

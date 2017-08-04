@@ -1,9 +1,271 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="0"  lines-covered="0"  line-rate="1"  branches-valid="0"  branches-covered="0"  branch-rate="1"  timestamp="1501834860714" complexity="0" version="0.1">
+<coverage lines-valid="79"  lines-covered="15"  line-rate="0.18989999999999999"  branches-valid="7"  branches-covered="0"  branch-rate="0"  timestamp="1501847346459" complexity="0" version="0.1">
 <sources>
 	<source>C:\wamp64\www\movie-store\app</source>
 </sources>
 <packages>
+	<package name="..application.components.home"  line-rate="0.6667000000000001"  branch-rate="1" >
+	<classes>
+		<class name="home.controller.js"  filename="application\components\home\home.controller.js"  line-rate="0.5"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="4"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="5"  hits="0"  branch="false" />
+		</lines>
+		</class>
+		<class name="home.module.js"  filename="application\components\home\home.module.js"  line-rate="1"  branch-rate="1" >
+		<methods>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+		</lines>
+		</class>
+	</classes>
+	</package>
+	<package name="..application.components.movies"  line-rate="0.1379"  branch-rate="1" >
+	<classes>
+		<class name="movies.controller.js"  filename="application\components\movies\movies.controller.js"  line-rate="0.2"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="4"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="5"  hits="0"  branch="false" />
+			<line number="7"  hits="0"  branch="false" />
+			<line number="16"  hits="0"  branch="false" />
+			<line number="17"  hits="0"  branch="false" />
+		</lines>
+		</class>
+		<class name="movies.filter.js"  filename="application\components\movies\movies.filter.js"  line-rate="0.5"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="3"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_2)"  hits="0"  signature="()V" >
+				<lines><line number="4"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="4"  hits="0"  branch="false" />
+		</lines>
+		</class>
+		<class name="movies.module.js"  filename="application\components\movies\movies.module.js"  line-rate="1"  branch-rate="1" >
+		<methods>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+		</lines>
+		</class>
+		<class name="movies.service.js"  filename="application\components\movies\movies.service.js"  line-rate="0.047599999999999996"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="4"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_2)"  hits="0"  signature="()V" >
+				<lines><line number="9"  hits="0" /></lines>
+			</method>
+			<method name="callSuccess"  hits="0"  signature="()V" >
+				<lines><line number="24"  hits="0" /></lines>
+			</method>
+			<method name="callError"  hits="0"  signature="()V" >
+				<lines><line number="28"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_5)"  hits="0"  signature="()V" >
+				<lines><line number="34"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_6)"  hits="0"  signature="()V" >
+				<lines><line number="38"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_7)"  hits="0"  signature="()V" >
+				<lines><line number="44"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_8)"  hits="0"  signature="()V" >
+				<lines><line number="48"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="6"  hits="0"  branch="false" />
+			<line number="7"  hits="0"  branch="false" />
+			<line number="9"  hits="0"  branch="false" />
+			<line number="10"  hits="0"  branch="false" />
+			<line number="11"  hits="0"  branch="false" />
+			<line number="20"  hits="0"  branch="false" />
+			<line number="26"  hits="0"  branch="false" />
+			<line number="27"  hits="0"  branch="false" />
+			<line number="29"  hits="0"  branch="false" />
+			<line number="31"  hits="0"  branch="false" />
+			<line number="34"  hits="0"  branch="false" />
+			<line number="35"  hits="0"  branch="false" />
+			<line number="38"  hits="0"  branch="false" />
+			<line number="40"  hits="0"  branch="false" />
+			<line number="41"  hits="0"  branch="false" />
+			<line number="44"  hits="0"  branch="false" />
+			<line number="45"  hits="0"  branch="false" />
+			<line number="48"  hits="0"  branch="false" />
+			<line number="49"  hits="0"  branch="false" />
+			<line number="51"  hits="0"  branch="false" />
+		</lines>
+		</class>
+	</classes>
+	</package>
+	<package name="..application.components.search"  line-rate="0.3333"  branch-rate="1" >
+	<classes>
+		<class name="search.controller.js"  filename="application\components\search\search.controller.js"  line-rate="0.2"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="4"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="5"  hits="0"  branch="false" />
+			<line number="7"  hits="0"  branch="false" />
+			<line number="16"  hits="0"  branch="false" />
+			<line number="17"  hits="0"  branch="false" />
+		</lines>
+		</class>
+		<class name="search.module.js"  filename="application\components\search\search.module.js"  line-rate="1"  branch-rate="1" >
+		<methods>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+		</lines>
+		</class>
+	</classes>
+	</package>
+	<package name="..application.shared.footer"  line-rate="0.6667000000000001"  branch-rate="1" >
+	<classes>
+		<class name="footer.directive.js"  filename="application\shared\footer\footer.directive.js"  line-rate="0.5"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="3"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_2)"  hits="0"  signature="()V" >
+				<lines><line number="7"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="4"  hits="0"  branch="false" />
+		</lines>
+		</class>
+		<class name="footer.module.js"  filename="application\shared\footer\footer.module.js"  line-rate="1"  branch-rate="1" >
+		<methods>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+		</lines>
+		</class>
+	</classes>
+	</package>
+	<package name="..application.shared.header"  line-rate="0.1"  branch-rate="0" >
+	<classes>
+		<class name="header.controller.js"  filename="application\shared\header\header.controller.js"  line-rate="0.5"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="4"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="5"  hits="0"  branch="false" />
+		</lines>
+		</class>
+		<class name="header.directive.js"  filename="application\shared\header\header.directive.js"  line-rate="0.037000000000000005"  branch-rate="0" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="3"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_2)"  hits="0"  signature="()V" >
+				<lines><line number="7"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_3)"  hits="0"  signature="()V" >
+				<lines><line number="10"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_4)"  hits="0"  signature="()V" >
+				<lines><line number="13"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_5)"  hits="0"  signature="()V" >
+				<lines><line number="17"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_6)"  hits="0"  signature="()V" >
+				<lines><line number="31"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_7)"  hits="0"  signature="()V" >
+				<lines><line number="34"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="4"  hits="0"  branch="false" />
+			<line number="11"  hits="0"  branch="false" />
+			<line number="13"  hits="0"  branch="false" />
+			<line number="14"  hits="0"  branch="false" />
+			<line number="15"  hits="0"  branch="false" />
+			<line number="16"  hits="0"  branch="false" />
+			<line number="17"  hits="0"  branch="false" />
+			<line number="19"  hits="0"  branch="false" />
+			<line number="20"  hits="0"  branch="false" />
+			<line number="21"  hits="0"  branch="true"  condition-coverage="0% (0/2)" />
+			<line number="22"  hits="0"  branch="false" />
+			<line number="23"  hits="0"  branch="false" />
+			<line number="25"  hits="0"  branch="false" />
+			<line number="31"  hits="0"  branch="false" />
+			<line number="32"  hits="0"  branch="false" />
+			<line number="33"  hits="0"  branch="false" />
+			<line number="34"  hits="0"  branch="false" />
+			<line number="36"  hits="0"  branch="false" />
+			<line number="37"  hits="0"  branch="false" />
+			<line number="38"  hits="0"  branch="false" />
+			<line number="39"  hits="0"  branch="true"  condition-coverage="0% (0/5)" />
+			<line number="40"  hits="0"  branch="false" />
+			<line number="41"  hits="0"  branch="false" />
+			<line number="43"  hits="0"  branch="false" />
+			<line number="46"  hits="0"  branch="false" />
+			<line number="47"  hits="0"  branch="false" />
+		</lines>
+		</class>
+		<class name="header.module.js"  filename="application\shared\header\header.module.js"  line-rate="1"  branch-rate="1" >
+		<methods>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+		</lines>
+		</class>
+	</classes>
+	</package>
+	<package name="..application"  line-rate="0.25"  branch-rate="1" >
+	<classes>
+		<class name="app.js"  filename="application\app.js"  line-rate="0.25"  branch-rate="1" >
+		<methods>
+			<method name="(anonymous_1)"  hits="0"  signature="()V" >
+				<lines><line number="9"  hits="0" /></lines>
+			</method>
+			<method name="(anonymous_2)"  hits="0"  signature="()V" >
+				<lines><line number="29"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="7"  hits="1"  branch="false" />
+			<line number="10"  hits="0"  branch="false" />
+			<line number="15"  hits="0"  branch="false" />
+			<line number="20"  hits="0"  branch="false" />
+			<line number="25"  hits="0"  branch="false" />
+			<line number="31"  hits="0"  branch="false" />
+			<line number="32"  hits="0"  branch="false" />
+		</lines>
+		</class>
+	</classes>
+	</package>
 </packages>
 </coverage>
