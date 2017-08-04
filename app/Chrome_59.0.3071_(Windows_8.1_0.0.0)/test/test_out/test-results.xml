@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 59.0.3071 (Windows 8.1 0.0.0)" package="" timestamp="2017-08-04T07:47:49" id="0" hostname="LPTP089" tests="0" errors="1" failures="0" time="0">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"/>
+  </properties>
+  <system-out>
+    <![CDATA[Chrome 59.0.3071 (Windows 8.1 0.0.0) ERROR
+  Uncaught ReferenceError: angular is not defined
+  at application/app.js:3
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
