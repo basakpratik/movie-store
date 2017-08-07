@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="79"  lines-covered="15"  line-rate="0.18989999999999999"  branches-valid="7"  branches-covered="0"  branch-rate="0"  timestamp="1501847346459" complexity="0" version="0.1">
+<coverage lines-valid="79"  lines-covered="15"  line-rate="0.18989999999999999"  branches-valid="7"  branches-covered="0"  branch-rate="0"  timestamp="1501853126988" complexity="0" version="0.1">
 <sources>
 	<source>C:\wamp64\www\movie-store\app</source>
 </sources>
