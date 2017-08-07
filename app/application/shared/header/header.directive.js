@@ -8,10 +8,32 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
             // ..
         },
         controller: function($scope, $log, $state, $rootScope, MoviesService){
-            $scope.genres = ['Action', 'Adventure', 'Fantasy', 'Sci-Fi', 'Romance', 'Animation', 'Comedy', 'Drama', 'History', 'Thriller'];
+            const movie_genres = []; let allgenres = []; $scope.genres = [];
+            //$scope.genres = ['Action', 'Adventure', 'Fantasy', 'Sci-Fi', 'Romance', 'Animation', 'Comedy', 'Drama', 'History', 'Thriller'];
+
+            MoviesService.msGetData().then(function(dataparam){
+                let movielist = dataparam;
+                for(let idx=0; idx<movielist.length; idx++){
+                    movie_genres.push(movielist[idx].genres.split('|'));
+                }
+                //$log.log(movie_genres.join().split(','));
+                allgenres = movie_genres.join().split(',');
+                for(let i=0; i<allgenres.length; i++){
+                    $scope.genres.push(allgenres[i]);
+                    let counter = 0;
+                    for(let j=0; j<$scope.genres.length; j++){
+                        if(allgenres[i] == $scope.genres[j]){
+                            counter++;
+                        }
+                        if(counter > 1){
+                            $scope.genres.pop(allgenres[i]);
+                        }
+                    }
+                }
+            });
 
             $scope.filterMovies = function(genre){
-                $log.log('genre->'+genre);
+                //$log.log('genre->'+genre);
                 $rootScope.overlay = true;
                 const filteredMovies = [];
                 MoviesService.msGetData().then(function(dataparam){
