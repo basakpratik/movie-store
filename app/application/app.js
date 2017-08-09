@@ -25,15 +25,10 @@ angular.module('movieApp').config([
         $urlRouterProvider.otherwise('/');
     }
 ])
-.run(['$state', '$rootScope', 'MoviesService',
-    function ($state, $rootScope, MoviesService) {
+.run(['$state', '$rootScope',
+    function ($state, $rootScope) {
         // ...
         $rootScope.overlay = false;
-        MoviesService.msGetData().then(function(dataparam){
-            //let movielist = dataparam;
-            localStorage.setItem('movieList', dataparam);
-        });
         $state.go('home');
     }
-
 ]);

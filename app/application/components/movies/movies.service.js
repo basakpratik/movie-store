@@ -24,6 +24,7 @@ angular.module('movieApp.movies.service', []).service('MoviesService',
         }).then(function callSuccess(response){
             //$log.log('response->'+JSON.stringify(response));
             data = response.data;
+            localStorage.setItem('respData', JSON.stringify(data));
             def.resolve(data);
         }, function callError(error){
             def.reject('Error fetching data ..');
