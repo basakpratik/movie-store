@@ -9,12 +9,11 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
             // ..
         },
         controller: function($scope, $log, $state, $rootScope, MoviesService){
-            const movie_genres = []; let allgenres = []; $scope.genres = [];
-            //$scope.genres = ['Action', 'Adventure', 'Fantasy', 'Sci-Fi', 'Romance', 'Animation', 'Comedy', 'Drama', 'History', 'Thriller'];
+            const movie_genres = []; let allgenres = []; $scope.genres = []; var respData;
 
-            /* MoviesService.msGetData().then(function(dataparam){
+             MoviesService.msGetData().then(function(dataparam){
                 let movielist = dataparam;
-                for(let idx=0; idx<movielist.length; idx++){
+                /* for(let idx=0; idx<movielist.length; idx++){
                     movie_genres.push(movielist[idx].genres.split('|'));
                 }
                 //$log.log(movie_genres.join().split(','));
@@ -30,19 +29,19 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
                             $scope.genres.pop(allgenres[i]);
                         }
                     }
-                }
-            }); */
+                } */
+            });
 
-            var respCall = function(){
+            /* var respCall = function(){
                 var respData = localStorage.getItem('respData');
                 respData = JSON.parse(respData);
                 $scope.genres = respData;
-                $log.log('$scope.genres: '+$scope.genres);
+                //$log.log('$scope.genres: '+$scope.genres);
                 return respData;
             }
 
-            let respData = respCall();            
-            $log.log('respData: '+respData);
+            let respData = respCall();        */     
+            //$log.log('respData: '+respData);
 
             $scope.filterMovies = function(genre){
                 //$log.log('genre->'+genre);
