@@ -13,7 +13,7 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
 
              MoviesService.msGetData().then(function(dataparam){
                 let movielist = dataparam;
-                /* for(let idx=0; idx<movielist.length; idx++){
+                for(let idx=0; idx<movielist.length; idx++){
                     movie_genres.push(movielist[idx].genres.split('|'));
                 }
                 //$log.log(movie_genres.join().split(','));
@@ -29,7 +29,7 @@ angular.module('movieApp.header.directive',[]).directive('movieNavbar', function
                             $scope.genres.pop(allgenres[i]);
                         }
                     }
-                } */
+                }
             });
 
             /* var respCall = function(){
