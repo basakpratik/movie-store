@@ -7,8 +7,10 @@ function($scope, $log, $state, $rootScope, MoviesService){
 
     const movie_genres = []; let allgenres = []; $scope.genres = []; var respData;
 
-    /*MoviesService.msGetData().then(function(dataparam){
-        let movielist = dataparam;
+    MoviesService.msGetData().then(function(){
+        //let movielist = dataparam;
+        const storageData = localStorage.getItem('respData');
+        let movielist = JSON.parse(storageData);
         for(let idx=0; idx<movielist.length; idx++){
             movie_genres.push(movielist[idx].genres.split('|'));
         }
@@ -26,31 +28,17 @@ function($scope, $log, $state, $rootScope, MoviesService){
                 }
             }
         }
-    });*/
-
-    MoviesService.msGetData().then(function(dataparam){
-        $log.log(localStorage.getItem('respData'));
     });
-
-    /* var respCall = function(){
-        var respData = localStorage.getItem('respData');
-        respData = JSON.parse(respData);
-        $scope.genres = respData;
-        //$log.log('$scope.genres: '+$scope.genres);
-        return respData;
-    }
-
-    let respData = respCall();        */     
-    //$log.log('respData: '+respData);
 
     $scope.filterMovies = function(genre){
         //$log.log('genre->'+genre);
         $rootScope.selectedGenre = genre;
         $rootScope.overlay = true;
         const filteredMovies = [];
-        MoviesService.msGetData().then(function(dataparam){
+        MoviesService.msGetData().then(function(){
             //$log.log('dataparam->'+JSON.stringify(dataparam));
-            let movielist = dataparam;
+            const storageData = localStorage.getItem('respData');
+            let movielist = JSON.parse(storageData);
             for(var idx=0; idx<movielist.length; idx++){
                 if(movielist[idx].genres.indexOf(genre) > -1){
                     filteredMovies.push(movielist[idx]);
@@ -66,10 +54,10 @@ function($scope, $log, $state, $rootScope, MoviesService){
         $rootScope.searchTxt = searchText;
         $rootScope.overlay = true;
         const searchResults = [];
-        MoviesService.msGetData().then(function(dataparam){
-            //$log.log('dataparam->'+JSON.stringify(dataparam));
+        MoviesService.msGetData().then(function(){
             $log.log('searching ..' + searchText);
-            let searchlist = dataparam;
+            const storageData = localStorage.getItem('respData');
+            let searchlist = JSON.parse(storageData);
             for(var idx=0; idx<searchlist.length; idx++){
                 if(searchlist[idx].movie_title.toLowerCase().indexOf(searchText.toLowerCase()) > -1 || searchlist[idx].genres.toLowerCase().indexOf(searchText.toLowerCase()) > -1 || searchlist[idx].plot_keywords.toLowerCase().indexOf(searchText.toLowerCase()) > -1){
                     searchResults.push(searchlist[idx]);
