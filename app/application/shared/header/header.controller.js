@@ -53,6 +53,7 @@ function($scope, $log, $state, $rootScope, MoviesService){
     $scope.search = function(searchText){
         $rootScope.searchTxt = searchText;
         $rootScope.overlay = true;
+        $scope.showList = false;
         const searchResults = [];
         MoviesService.msGetData().then(function(){
             $log.log('searching ..' + searchText);
@@ -92,6 +93,11 @@ function($scope, $log, $state, $rootScope, MoviesService){
             //$state.go('search', null, {'reload':true});
             $rootScope.overlay = false;
         });
+    }
+
+    $scope.selectedName = function(selectedMovie){
+        $scope.searchText = selectedMovie;
+        $scope.showList = false;
     }
 
 }]);

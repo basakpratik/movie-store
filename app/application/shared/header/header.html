@@ -41,7 +41,7 @@
 					<input type="text" class="form-control" id="search-field" ng-model="searchText" autocomplete="off" placeholder="Search" ng-change="autocomplete(searchText)">
 					<div class="autocomplete-list" ng-show="showList">
 						<ul>
-							<li ng-repeat="autocomUnitRes in autocomResult track by $index"><a href="">{{autocomUnitRes}}</a></li>
+							<li ng-repeat="autocomUnitRes in autocomResult track by $index"><a href="" ng-click="selectedName(autocomUnitRes)">{{autocomUnitRes}}</a></li>
 						</ul>
 					</div>
 					<button type="submit" class="hidden-submit"></button>
