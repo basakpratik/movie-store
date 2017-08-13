@@ -5,7 +5,7 @@ angular.module('movieApp.header.controller',[]).controller('HeaderController',
 function($scope, $log, $state, $rootScope, MoviesService){
     $log.log('HeaderController ..');
 
-    const movie_genres = []; let allgenres = []; $scope.genres = []; var respData;
+    const movie_genres = []; let allgenres = []; $scope.genres = []; var respData; $scope.showList = false;
 
     MoviesService.msGetData().then(function(){
         //let movielist = dataparam;
@@ -67,6 +67,29 @@ function($scope, $log, $state, $rootScope, MoviesService){
                 }
             }
             $state.go('search', null, {'reload':true});
+            $rootScope.overlay = false;
+        });
+    }
+
+    $scope.autocomplete = function(searchText){
+        //$log.log('searchText: '+searchText);
+        const search_results = [];
+        MoviesService.msGetData().then(function(){
+            $scope.autocomResult = [];
+            const storageData = localStorage.getItem('respData');
+            let movielist = JSON.parse(storageData);
+            for(var idx=0; idx<movielist.length; idx++){
+                if(movielist[idx].movie_title.toLowerCase().indexOf(searchText.toLowerCase()) > -1){
+                    search_results.push(movielist[idx]);
+                    //$log.log(search_results);
+                    $scope.autocomResult.push(movielist[idx]['movie_title']);
+                    $scope.showList = true;
+                    //MoviesService.msSetSearchedMovies(searchResults);
+                } else {
+                    $log.log('not found');
+                }
+            }
+            //$state.go('search', null, {'reload':true});
             $rootScope.overlay = false;
         });
     }

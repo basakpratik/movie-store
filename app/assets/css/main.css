@@ -11,3 +11,8 @@ nav ul{ list-style-type: none;}
 .mdl-layout__content{ padding: 60px 15px 0; }
 .container .text-muted { margin: 20px 0; }
 navbar-fixed-top{ z-index: 999; }
+.search-section{ position: relative; }
+.autocomplete-list{ min-width: 300px; max-height: 300px; overflow: auto;  position: absolute; left: 0; top: 36px; background-color: #fff; z-index: 10; box-shadow: 0 0 5px rgba(0,0,0,0.25); padding: 10px 0; }
+.autocomplete-list ul{ padding-left: 0; }
+.autocomplete-list ul li a{ display: block; color: #4f4f4f; padding: 5px 15px; text-decoration: none; }
+.autocomplete-list ul li a:hover{ background-color: #fafafa; }
