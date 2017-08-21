@@ -1,6 +1,6 @@
 <div class="page-content">
     <h1 class="mdl-typography--display-1-color-contrast mdl-typography--text-center">{{selectedGenre}} Movies List</h1>
-    <div class="android-card-container mdl-grid">
+    <div class="android-card-container mdl-grid" infinite-scroll="filterMovies()" infinite-scroll-distance="3">
         <div ng-repeat="movie in movielist" class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__title mdl-card--expand">
                 <h4 class="mdl-card__title-text">{{movie.movie_title}}</h4>

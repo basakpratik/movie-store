@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('movieApp', [
-    'ui.router', 'movieApp.home', 'movieApp.header', 'movieApp.footer', 'movieApp.movies', 'movieApp.search'
+    'ui.router', 'movieApp.home', 'movieApp.header', 'movieApp.footer', 'movieApp.inScroll', 'movieApp.movies', 'movieApp.search'
 ]);
 
 angular.module('movieApp').config([
