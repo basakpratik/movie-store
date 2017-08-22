@@ -4,7 +4,10 @@ angular.module('movieApp.movies.controller', []).controller('MoviesController',
 ['$scope', '$log', '$rootScope', 'MoviesService', function($scope, $log, $rootScope, MoviesService){
     $log.log('Movies Controller.. ');
 
-    $scope.movielist = [];
+    $scope.showLoadMore = true;
+
+    $scope.movielist = []; const show_per_block = 8;
+    var holdValue;
 
     /* (function(){
         MoviesService.msGetData().then(function(dataparam){
@@ -13,7 +16,29 @@ angular.module('movieApp.movies.controller', []).controller('MoviesController',
         });
     })(); */
 
-    $scope.movielist = MoviesService.msGetFilteredMovies();
+    $scope.getmovielist = MoviesService.msGetFilteredMovies();
+    for(let i=0; i<$scope.getmovielist.length; i++){
+        if(i<show_per_block){
+            $scope.movielist.push($scope.getmovielist[i]);
+        } else {
+            holdValue = i;
+            break;
+        }
+    }
     $rootScope.overlay = false;
+
+    $scope.loadmore = function(){
+        if(($scope.getmovielist.length - $scope.movielist.length) < 5){
+            $scope.showLoadMore = false;
+        }
+        for(let i=holdValue; i<$scope.getmovielist.length; i++){
+            if(i<(holdValue+show_per_block)){
+                $scope.movielist.push($scope.getmovielist[i]);
+            } else {
+                holdValue = i;
+                break;
+            }
+        }
+    }
 
 }]);
