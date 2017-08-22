@@ -5,12 +5,13 @@ angular.module('movieApp.header.controller',[]).controller('HeaderController',
 function($scope, $log, $state, $rootScope, MoviesService){
     $log.log('HeaderController ..');
 
-    const movie_genres = []; let allgenres = []; $scope.genres = []; var respData; $scope.showList = false;
+    var respData; const movie_genres = []; let allgenres = [];
+    $scope.genres = []; $scope.showList = false;
 
     MoviesService.msGetData().then(function(){
         //let movielist = dataparam;
-        const storageData = localStorage.getItem('respData');
-        let movielist = JSON.parse(storageData);
+        const storage_data = localStorage.getItem('respData');
+        let movielist = JSON.parse(storage_data);
         for(let idx=0; idx<movielist.length; idx++){
             movie_genres.push(movielist[idx].genres.split('|'));
         }
@@ -37,8 +38,8 @@ function($scope, $log, $state, $rootScope, MoviesService){
         const filteredMovies = [];
         MoviesService.msGetData().then(function(){
             //$log.log('dataparam->'+JSON.stringify(dataparam));
-            const storageData = localStorage.getItem('respData');
-            let movielist = JSON.parse(storageData);
+            const storage_data = localStorage.getItem('respData');
+            let movielist = JSON.parse(storage_data);
             for(var idx=0; idx<movielist.length; idx++){
                 if(movielist[idx].genres.indexOf(genre) > -1){
                     filteredMovies.push(movielist[idx]);
@@ -57,8 +58,8 @@ function($scope, $log, $state, $rootScope, MoviesService){
         const searchResults = [];
         MoviesService.msGetData().then(function(){
             $log.log('searching ..' + searchText);
-            const storageData = localStorage.getItem('respData');
-            let searchlist = JSON.parse(storageData);
+            const storage_data = localStorage.getItem('respData');
+            let searchlist = JSON.parse(storage_data);
             for(var idx=0; idx<searchlist.length; idx++){
                 if(searchlist[idx].movie_title.toLowerCase().indexOf(searchText.toLowerCase()) > -1 || searchlist[idx].genres.toLowerCase().indexOf(searchText.toLowerCase()) > -1 || searchlist[idx].plot_keywords.toLowerCase().indexOf(searchText.toLowerCase()) > -1){
                     searchResults.push(searchlist[idx]);
@@ -77,8 +78,8 @@ function($scope, $log, $state, $rootScope, MoviesService){
         const search_results = [];
         MoviesService.msGetData().then(function(){
             $scope.autocomResult = [];
-            const storageData = localStorage.getItem('respData');
-            let movielist = JSON.parse(storageData);
+            const storage_data = localStorage.getItem('respData');
+            let movielist = JSON.parse(storage_data);
             for(var idx=0; idx<movielist.length; idx++){
                 if(movielist[idx].movie_title.toLowerCase().indexOf(searchText.toLowerCase()) > -1){
                     search_results.push(movielist[idx]);
