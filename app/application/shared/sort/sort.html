@@ -1,1 +1,25 @@
-sorting elements goes here
+<div class="col-xs-12 clearfix">
+    <div class="row">
+        <div class="col-sm-6 filtered-result"><div class="row"><strong>{{getMovieListLength}}</strong> results</div></div>
+        <form class="col-sm-6 form-inline text-right float-right">
+            <div class="row">
+                <div class="form-group">
+                    <label for="exampleInputName2">Sort by year: </label>
+                    <select name="" id="" class="form-control" ng-change="sortByFunc('year')" ng-model="sortType">
+                        <option value="">-- Select --</option>
+                        <option value="Oldest-to-Latest">Oldest-to-Latest</option>
+                        <option value="Latest-to-Oldest">Latest-to-Oldest</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">Sort by budget: </label>
+                    <select name="" id="" class="form-control" ng-change="sortByFunc('budget')" ng-model="sortType">
+                        <option value="">-- Select --</option>
+                        <option value="Low-to-High">Low-to-High</option>
+                        <option value="High-to-Low">High-to-Low</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

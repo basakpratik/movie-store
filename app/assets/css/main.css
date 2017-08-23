@@ -16,3 +16,5 @@ navbar-fixed-top{ z-index: 999; }
 .autocomplete-list ul{ padding-left: 0; }
 .autocomplete-list ul li a{ display: block; color: #4f4f4f; padding: 5px 15px; text-decoration: none; }
 .autocomplete-list ul li a:hover{ background-color: #fafafa; }
+.filtered-result{ line-height: 2.25; }
+.load-more{ margin: 30px 0; }

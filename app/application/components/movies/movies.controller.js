@@ -16,8 +16,8 @@ angular.module('movieApp.movies.controller', []).controller('MoviesController',
     })(); */
 
     $scope.getmovielist = MoviesService.msGetFilteredMovies();
-    let getMovieListLength = $scope.getmovielist.length;
-    for(let i=0; i<getMovieListLength; i++){
+    $scope.getMovieListLength = $scope.getmovielist.length;
+    for(let i=0; i<$scope.getMovieListLength; i++){
         if(i<show_per_block){
             $scope.movielist.push($scope.getmovielist[i]);
         } else {
@@ -31,7 +31,7 @@ angular.module('movieApp.movies.controller', []).controller('MoviesController',
         if(($scope.getmovielist.length - $scope.movielist.length) < 5){
             $scope.showLoadMore = false;
         }
-        for(let i=holdValue; i<getMovieListLength; i++){
+        for(let i=holdValue; i<$scope.getMovieListLength; i++){
             if(i<(holdValue+show_per_block)){
                 $scope.movielist.push($scope.getmovielist[i]);
             } else {
